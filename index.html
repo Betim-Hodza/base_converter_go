@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+		<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+				<!-- jk we do push it and submit the form to our go server -->
+        <form action="/submit" method="POST" id="inputForm">
+            <div class="form-group">
+                <label for="numberInput">Enter base 10 number:</label>
+                <input type="number" id="numberInput" name="numberInput" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="optionSelect">Select base to convert to:</label>
+
+                <select id="optionSelect" name="optionSelect" required>
+                    <option value="" disabled selected>Select base</option>
+                    <option value="2">Base 2</option>
+                    <option value="8">Base 8</option>
+                    <option value="10">Base 10</option>
+                    <option value="16">Base 16</option>
+                </select>
+            </div>
+            <button type="submit">Confirm</button>
+        </form>
+
+			<p id="result"> {{.Result}}</p>
+
+    </div>
+
+</body>
+</html>
